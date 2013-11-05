@@ -2,24 +2,24 @@ package com.ft.learning;
 
 public class Resources {
 	
-	private long id;
-	private String name;
+	private String id;
+	private String title;
 	private String description;
 	private String type;
 	private String url;
 	private String imageUrl;
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getDescription() {
 		return description;

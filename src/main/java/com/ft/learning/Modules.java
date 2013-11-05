@@ -4,20 +4,23 @@ import java.util.List;
 
 public class Modules {
 
-	private long id;
-	private String name;
+	private String id;
+	private String title;
+	private String description;
+	private List<Resources> resources;
+	private int ratings;
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getDescription() {
 		return description;
@@ -34,10 +37,8 @@ public class Modules {
 	public long getRatings() {
 		return ratings;
 	}
-	public void setRatings(long ratings) {
+	public void setRatings(int ratings) {
 		this.ratings = ratings;
 	}
-	private String description;
-	private List<Resources> resources;
-	private long ratings;
+	
 }
