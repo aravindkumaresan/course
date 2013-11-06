@@ -22,6 +22,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
@@ -31,8 +32,7 @@ import org.json.JSONTokener;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.client.apache4.ApacheHttpClient4;
+
 
 
 @Path("/course")
@@ -63,7 +63,6 @@ public class CourseResource {
 		request.addHeader("X-Authorization", accessCode);
 		HttpResponse response = client.execute(request);
 		
-
 		BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
 		StringBuilder builder = new StringBuilder();
 		for (String line = null; (line = reader.readLine()) != null;) {
