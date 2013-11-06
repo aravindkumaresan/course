@@ -187,29 +187,29 @@ private Course getCourseInfo(String accessCode, String id) throws ClientProtocol
 		
 		
 		Resources resources1 = new Resources();
-	    resources.setId("1f715c6c-2f3d-11e3-ae87-00144feab7de");
-	    resources.setType("Article");
-	    resources.setUrl("http://www.ft.com/cms/s/0/1f715c6c-2f3d-11e3-ae87-00144feab7de.html");
-		resources.setDescription("Sentiment analysis: Machine and man unite to assess brand value");
+	    resources1.setId("1f715c6c-2f3d-11e3-ae87-00144feab7de");
+	    resources1.setType("Article");
+	    resources1.setUrl("http://www.ft.com/cms/s/0/1f715c6c-2f3d-11e3-ae87-00144feab7de.html");
+		resources1.setDescription("Sentiment analysis: Machine and man unite to assess brand value");
 		
 		
 		Resources resources2 = new Resources();
-	    resources.setId("6f9cd8f4-4565-11e3-997c-00144feabdc0");
-	    resources.setType("Article");
-	    resources.setUrl("http://www.ft.com/cms/s/0/6f9cd8f4-4565-11e3-997c-00144feabdc0.html");
-		resources.setDescription("Urgent business for a new global statistics agency");
+	    resources2.setId("6f9cd8f4-4565-11e3-997c-00144feabdc0");
+	    resources2.setType("Article");
+	    resources2.setUrl("http://www.ft.com/cms/s/0/6f9cd8f4-4565-11e3-997c-00144feabdc0.html");
+		resources2.setDescription("Urgent business for a new global statistics agency");
 		
 		Resources resources3 = new Resources();
-	    resources.setId("fc29e598-367c-11e3-8ae3-00144feab7de");
-	    resources.setType("Article");
-	    resources.setUrl("http://www.ft.com/cms/s/0/fc29e598-367c-11e3-8ae3-00144feab7de.html");
-		resources.setDescription("Former London gin distillery becomes winery");
+	    resources3.setId("fc29e598-367c-11e3-8ae3-00144feab7de");
+	    resources3.setType("Article");
+	    resources3.setUrl("http://www.ft.com/cms/s/0/fc29e598-367c-11e3-8ae3-00144feab7de.html");
+		resources3.setDescription("Former London gin distillery becomes winery");
 		
 		Resources resources4 = new Resources();
-	    resources.setId("b3c16434-4617-11e3-b495-00144feabdc0");
-	    resources.setType("Article");
-	    resources.setUrl("http://www.ft.com/cms/s/0/b3c16434-4617-11e3-b495-00144feabdc0.html");
-		resources.setDescription("Miliband attacks Britain’s ‘Wonga economy’");
+	    resources4.setId("b3c16434-4617-11e3-b495-00144feabdc0");
+	    resources4.setType("Article");
+	    resources4.setUrl("http://www.ft.com/cms/s/0/b3c16434-4617-11e3-b495-00144feabdc0.html");
+		resources4.setDescription("Miliband attacks Britain’s ‘Wonga economy’");
 		
 		resourcesList.add(resources);
 		resourcesList.add(resources1);
@@ -233,29 +233,29 @@ private List<Resources> getResources2(String title)  {
 		
 		
 		Resources resources1 = new Resources();
-	    resources.setId("95f0e3ce-31c9-11e3-a16d-00144feab7de");
-	    resources.setType("Article");
-	    resources.setUrl("http://www.ft.com/cms/s/0/95f0e3ce-31c9-11e3-a16d-00144feab7de.html");
-		resources.setDescription("Extracts from the 2013 shortlist");
+	    resources1.setId("95f0e3ce-31c9-11e3-a16d-00144feab7de");
+	    resources1.setType("Article");
+	    resources1.setUrl("http://www.ft.com/cms/s/0/95f0e3ce-31c9-11e3-a16d-00144feab7de.html");
+		resources1.setDescription("Extracts from the 2013 shortlist");
 		
 		
 		Resources resources2 = new Resources();
-	    resources.setId("a0a64a56-31e8-11e3-a16d-00144feab7de");
-	    resources.setType("Article");
-	    resources.setUrl("http://www.ft.com/cms/s/0/a0a64a56-31e8-11e3-a16d-00144feab7de.html");
-		resources.setDescription("New York Fed sued over Goldman oversight");
+	    resources2.setId("a0a64a56-31e8-11e3-a16d-00144feab7de");
+	    resources2.setType("Article");
+	    resources2.setUrl("http://www.ft.com/cms/s/0/a0a64a56-31e8-11e3-a16d-00144feab7de.html");
+		resources2.setDescription("New York Fed sued over Goldman oversight");
 		
 		Resources resources3 = new Resources();
-	    resources.setId("5f3ac424-2ece-11e3-be22-00144feab7de");
-	    resources.setType("Article");
-	    resources.setUrl("http://www.ft.com/cms/s/0/5f3ac424-2ece-11e3-be22-00144feab7de.html");
-		resources.setDescription("Transcript: Peter Voser talks to the FT");
+	    resources3.setId("5f3ac424-2ece-11e3-be22-00144feab7de");
+	    resources3.setType("Article");
+	    resources3.setUrl("http://www.ft.com/cms/s/0/5f3ac424-2ece-11e3-be22-00144feab7de.html");
+		resources3.setDescription("Transcript: Peter Voser talks to the FT");
 		
 		Resources resources4 = new Resources();
-	    resources.setId("e5a4d194-f558-11e2-94e9-00144feabdc0");
-	    resources.setType("Article");
-	    resources.setUrl("http://www.ft.com/cms/s/0/e5a4d194-f558-11e2-94e9-00144feabdc0.html");
-		resources.setDescription("Pension plans: Flying solo");
+	    resources4.setId("e5a4d194-f558-11e2-94e9-00144feabdc0");
+	    resources4.setType("Article");
+	    resources4.setUrl("http://www.ft.com/cms/s/0/e5a4d194-f558-11e2-94e9-00144feabdc0.html");
+		resources4.setDescription("Pension plans: Flying solo");
 		
 		resourcesList.add(resources);
 		resourcesList.add(resources1);
@@ -279,29 +279,29 @@ private List<Resources> getResources3(String title)  {
 	
 	
 	Resources resources1 = new Resources();
-    resources.setId("6ff46438-42eb-11e3-8350-00144feabdc0");
-    resources.setType("Article");
-    resources.setUrl("http://www.ft.com/cms/s/0/6ff46438-42eb-11e3-8350-00144feabdc0.html");
-	resources.setDescription("Being ethical in business is not as simple as ‘doing the right thing’");
+    resources1.setId("6ff46438-42eb-11e3-8350-00144feabdc0");
+    resources1.setType("Article");
+    resources1.setUrl("http://www.ft.com/cms/s/0/6ff46438-42eb-11e3-8350-00144feabdc0.html");
+	resources1.setDescription("Being ethical in business is not as simple as ‘doing the right thing’");
 	
 	
 	Resources resources2 = new Resources();
-    resources.setId("dacd1f84-41bf-11e3-b064-00144feabdc0");
-    resources.setType("Article");
-    resources.setUrl("http://www.ft.com/cms/s/2/dacd1f84-41bf-11e3-b064-00144feabdc0.html");
-	resources.setDescription("The internet is not going to save the world, says the Microsoft co-founder, whatever Mark Zuckerberg and Silicon Valley’s tech billionaires believe. But eradicating disease just might.");
+    resources2.setId("dacd1f84-41bf-11e3-b064-00144feabdc0");
+    resources2.setType("Article");
+    resources2.setUrl("http://www.ft.com/cms/s/2/dacd1f84-41bf-11e3-b064-00144feabdc0.html");
+	resources2.setDescription("The internet is not going to save the world, says the Microsoft co-founder, whatever Mark Zuckerberg and Silicon Valley’s tech billionaires believe. But eradicating disease just might.");
 	
 	Resources resources3 = new Resources();
-    resources.setId("525d21b0-3d0c-11e3-a8c4-00144feab7de");
-    resources.setType("Article");
-    resources.setUrl("http://www.ft.com/cms/s/0/525d21b0-3d0c-11e3-a8c4-00144feab7de.html");
-	resources.setDescription("Merkel and Hollande to change intelligence ties with US");
+    resources3.setId("525d21b0-3d0c-11e3-a8c4-00144feab7de");
+    resources3.setType("Article");
+    resources3.setUrl("http://www.ft.com/cms/s/0/525d21b0-3d0c-11e3-a8c4-00144feab7de.html");
+	resources3.setDescription("Merkel and Hollande to change intelligence ties with US");
 	
 	Resources resources4 = new Resources();
-    resources.setId("94f74c94-2b69-11e3-a1b7-00144feab7de");
-    resources.setType("Article");
-    resources.setUrl("http://www.ft.com/cms/s/0/94f74c94-2b69-11e3-a1b7-00144feab7de.html");
-	resources.setDescription("Analytics: Fragments of information come together to give the big picture");
+    resources4.setId("94f74c94-2b69-11e3-a1b7-00144feab7de");
+    resources4.setType("Article");
+    resources4.setUrl("http://www.ft.com/cms/s/0/94f74c94-2b69-11e3-a1b7-00144feab7de.html");
+	resources4.setDescription("Analytics: Fragments of information come together to give the big picture");
 	
 	resourcesList.add(resources);
 	resourcesList.add(resources1);
