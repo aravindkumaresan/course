@@ -41,7 +41,6 @@ public class CourseResource {
 	
 	private String template;
 	private String defaultName;
-	private ApacheHttpClient4 client = ApacheHttpClient4.create();
 	public static final String courseUrl = "https://m-api.ecollege.com/me/courses";
 	
 	public CourseResource(String template, String defaultName) 
@@ -59,6 +58,7 @@ public class CourseResource {
 		 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(courseUrl);
+		
 		// add request header
 		request.addHeader("X-Authorization", accessCode);
 		HttpResponse response = client.execute(request);
