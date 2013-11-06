@@ -23,6 +23,7 @@ public class CourseService extends Service<DefaultConfiguration> {
 		final String template = configuration.getTemplate();
 		final String defaultName = configuration.getDefaultName();
 		environment.addResource(new CourseResource(template, defaultName));
+		environment.addResource(new CourseInfoResource(template, defaultName));
 		environment.addFilter(new CorsHeadersFilter(), "/*");
 
 	}

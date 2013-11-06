@@ -16,6 +16,7 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.http.HttpEntity;
@@ -29,73 +30,39 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import com.google.common.base.Optional;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.client.apache4.ApacheHttpClient4;
 
-
-@Path("/course")
+@Path("/courseinfo")
 @Produces(MediaType.APPLICATION_JSON)
-public class CourseResource {
+public class CourseInfoResource {
 	
 	private String template;
 	private String defaultName;
-	private ApacheHttpClient4 client = ApacheHttpClient4.create();
-	public static final String courseUrl = "https://m-api.ecollege.com/me/courses";
 	
-	public CourseResource(String template, String defaultName) 
+	public CourseInfoResource(String template, String defaultName) 
 	{
 		this.template = template;
         this.defaultName = defaultName;
 	}
-	
-	@GET
-	public List<Course> course() throws IOException, ParseException {
-		
-		List<Course> courses = new ArrayList<Course>();
-		
-		String accessCode = "Access_Token access_token="+getAccessCode();
-		 
-		HttpClient client = new DefaultHttpClient();
-		HttpGet request = new HttpGet(courseUrl);
-		// add request header
-		request.addHeader("X-Authorization", accessCode);
-		HttpResponse response = client.execute(request);
-		
 
-		BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
-		StringBuilder builder = new StringBuilder();
-		for (String line = null; (line = reader.readLine()) != null;) {
-		    builder.append(line).append("\n");
-		}
-		JSONTokener tokener = new JSONTokener(builder.toString());
-		JSONObject finalResult = new JSONObject(tokener);
-		JSONArray jsonArray = finalResult.getJSONArray("courses");
-		//.out.println("Course Length" + jsonArray.length());
+	@GET
+	public Course courseInfo(@QueryParam("id") String id) throws IOException, ParseException {
+		String accessCode = getAccessCode();
 		
-		for(int i=0; i< jsonArray.length(); i++)
-		{
-			JSONObject objectInArray = jsonArray.getJSONObject(i);
-			JSONArray jsonArray1 = objectInArray.getJSONArray("links");
-			
-			JSONObject objectInArray1 = jsonArray1.getJSONObject(0);
-			String value = objectInArray1.getString("href");
-			
-			Course course = getCourseInfo(accessCode, value);
-			courses.add(course);
-			
-			System.out.println("Course URL" + value);
-		}
+		Course course = getCourseInfo(accessCode, id);
 		
+		return course;
 		
-		return courses;
 	}
 	
-	private Course getCourseInfo(String accessCode, String value) throws ClientProtocolException, IOException, ParseException {
+private Course getCourseInfo(String accessCode, String id) throws ClientProtocolException, IOException, ParseException {
 		
+	    String courseUrl = "https://m-api.ecollege.com/courses/"+id;
+	
 		HttpClient client = new DefaultHttpClient();
-		HttpGet request = new HttpGet(value);
+		HttpGet request = new HttpGet(courseUrl);
 		// add request header
 		request.addHeader("X-Authorization", accessCode);
 		HttpResponse response = client.execute(request);
@@ -130,12 +97,71 @@ public class CourseResource {
 		    
 		}
 		
-		// System.out.println(builder1.toString());
+		 System.out.println(builder1.toString());
 		 
 		course.setDescription(builder1.toString());
 		
+		List<Modules> modules = getModules();
+		
+		course.setModules(modules);
+		
 		return course;
 	}
+	
+	private List<Modules> getModules() {
+	
+		List<Modules> modules = new ArrayList<Modules>();
+		
+		Modules module1 = new Modules();
+		module1.setId("14079159");
+		module1.setTitle("Business Environment");
+		module1.setDescription("Discover the many factors affecting and determining the success of any business.");
+		module1.setRatings(5);
+		
+		//getResources(module1.getTitle());
+		//module1.setResources(resources);
+		
+		Modules module2 = new Modules();
+		module2.setId("14079160");
+		module2.setTitle("Managing Financial Resources and Decisions");
+		module2.setDescription("Learn how and where to find sources of finance for a business, and the skills to use financial information for decision-making.");
+		module2.setRatings(5);
+		
+		//getResources(module2.getTitle());
+		//module2.setResources(resources);
+		
+		Modules module3 = new Modules();
+		module3.setId("14079162");
+		module3.setTitle("Organisations and Behaviour");
+		module3.setDescription("Develop an understanding of the current theories surrounding organisational behaviour, using organisations’ own experiences where relevant.");
+		module3.setRatings(5);
+		
+		//getResources(module3.getTitle());
+		//module3.setResources(resources);
+		
+		Modules module4 = new Modules();
+		module4.setId("14079163");
+		module4.setTitle("Marketing Principles");
+		module4.setDescription("Explore the theories, concepts and frameworks used in marketing.");
+		module4.setRatings(5);
+		
+		//getResources(module4.getTitle());
+		//module4.setResources(resources);
+		
+		Modules module5 = new Modules();
+		module5.setId("14079164");
+		module5.setTitle("Aspects of Contract and Negligence for Business");
+		module5.setDescription("Delve into the fundamental principles of these two key areas of civil law, known collectively as the Law of Obligations, and how they affect business in the UK.");
+		module5.setRatings(5);
+		
+		modules.add(module1);
+		modules.add(module2);
+		modules.add(module3);
+		modules.add(module4);
+		modules.add(module5);
+		
+	return modules;
+}
 
 	private String getAccessCode() throws IOException
 	{
@@ -185,7 +211,7 @@ public class CourseResource {
 	      Type mapType  = new TypeToken<Map<String,String>>(){}.getType();
 	      Map<String,String> ser = gson.fromJson(json, mapType);
 	      String accessToken = ser.get("access_token");
-	     // System.out.println("Access Token = " + accessToken);
+	      System.out.println("Access Token = " + accessToken);
 	 
 	      return accessToken;
 	      
@@ -204,5 +230,4 @@ public class CourseResource {
 		return null;
 	
 	}
-
 }
