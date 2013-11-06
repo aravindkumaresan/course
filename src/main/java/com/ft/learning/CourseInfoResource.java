@@ -49,7 +49,7 @@ public class CourseInfoResource {
 
 	@GET
 	public Course courseInfo(@QueryParam("id") String id) throws IOException, ParseException {
-		String accessCode = getAccessCode();
+		String accessCode = "Access_Token access_token="+getAccessCode();
 		
 		Course course = getCourseInfo(accessCode, id);
 		
@@ -60,7 +60,9 @@ public class CourseInfoResource {
 private Course getCourseInfo(String accessCode, String id) throws ClientProtocolException, IOException, ParseException {
 		
 	    String courseUrl = "https://m-api.ecollege.com/courses/"+id;
-	
+	    
+	    System.out.println("CourseURL - inside" + courseUrl);
+	    
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(courseUrl);
 		// add request header
@@ -74,6 +76,9 @@ private Course getCourseInfo(String accessCode, String id) throws ClientProtocol
 		}
 		JSONTokener tokener = new JSONTokener(builder.toString());
 		JSONObject finalResult = new JSONObject(tokener);
+		
+		System.out.println(finalResult.toString());
+		
 		JSONArray jsonArray = finalResult.getJSONArray("courses");
 		JSONObject objectInArray1 = jsonArray.getJSONObject(0);
 		
